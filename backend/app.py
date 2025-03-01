@@ -158,3 +158,4 @@ if __name__ == '__main__':
     # 0.0.0.0 -> Indicates as a network server
     app.run(host="0.0.0.0", port=5000) # opens in http://localhost:5000 or network
 
+#Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
