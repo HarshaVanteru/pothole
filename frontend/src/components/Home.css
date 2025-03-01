@@ -1,0 +1,200 @@
+/* Global Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.home-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+header.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.home-header p {
+    font-size: 1.5rem;
+}
+
+/* Highlight Section */
+.highlight-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.highlight-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.animated-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.highlight-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.highlight-svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* About Section and Features Styling */
+.about-features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.features {
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    border-radius: 8px;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features li {
+    font-size: 1.5rem;
+    margin: 8px 0;
+}
+
+/* Navigation Styling */
+.navigation .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Increased gap between buttons */
+}
+
+.navigation button {
+    font-size: 1.25rem; /* Increase font size */
+    padding: 15px 30px; /* Increase padding for larger buttons */
+    border: 2px solid rgb(128, 0, 128); /* Purple border with transparency */
+    border-radius: 8px; /* Larger border radius for a more rounded look */
+    cursor: pointer;
+    background-color: rgba(108, 2, 76, 0.84); /* Transparent purple background */
+    backdrop-filter: blur(20px); /* Apply blur effect for the frosted glass effect */
+    transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    color: white; /* Ensure text is white */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/* Hover Effect */
+.navigation button:hover {
+    transform: scale(1.1); /* Slightly more scaling effect */
+    background-color: rgba(0, 123, 255, 0.6); /* Blue background on hover */
+    border: 2px solid rgba(0, 123, 255, 0.6); /* Blue border on hover */
+    color: white;
+}
+
+/* Animation Effects */
+@keyframes slideInAndScale {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(10%) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-50px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2) translateY(20px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Apply the slide-in animation to the static text */
+.static-text {
+    animation: slideInAndScale 1s ease-out forwards;
+}
+
+/* Apply bounce-in animation with delay for other sections */
+.about-section, .features, .navigation {
+    animation: bounceIn 1s ease-out 0.5s forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlight-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .highlight-image {
+        margin-top: 20px;
+    }
+
+    .home-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .home-header p,
+    .about-section p,
+    .features li {
+        font-size: 0.9rem;
+    }
+
+    .about-features-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .navigation .nav-buttons {
+        flex-direction: column;
+    }
+
+    .navigation button {
+        width: 100%;
+    }
+}
